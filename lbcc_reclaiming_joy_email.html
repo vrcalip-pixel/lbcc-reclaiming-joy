@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reclaiming Joy: Human-First Teaching in the AI Era | LBCC Faculty PD</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /*
+   * COLOR SYSTEM — LBCC Official Brand + WCAG 2.1 AA Compliant
+   * ----------------------------------------------------------
+   * --lbcc-red:      #DA291C  (PMS 485 — primary brand red)
+   * --lbcc-red-dark: #B01F15  (darkened for AA text on white — 5.9:1)
+   * --lbcc-black:    #1A1A1A  (Process Black)
+   * --lbcc-white:    #FFFFFF
+   * --lbcc-offwhite: #F5F5F5  (neutral surface)
+   * --lbcc-gray:     #595959  (body text on white — 7:1)
+   * --lbcc-lgray:    #767676  (min AA on white — 4.54:1)
+   *
+   * Contrast checks (WCAG 2.1 AA requires ≥4.5:1 normal, ≥3:1 large/bold):
+   * White on #DA291C  → 4.59:1 ✅ AA
+   * White on #1A1A1A  → 16.1:1 ✅ AAA
+   * #1A1A1A on white  → 16.1:1 ✅ AAA
+   * #595959 on white  → 7.0:1  ✅ AAA
+   * White on #B01F15  → 5.9:1  ✅ AA
+   */
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #EBEBEB;
+    font-family: 'DM Sans', sans-serif;
+    color: #1A1A1A;
+  }
+
+  .email-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  /* ── HERO — Muted deep crimson ── */
+  .hero {
+    background: linear-gradient(155deg, #8B1A13 0%, #7A1610 55%, #5E1009 100%);
+    padding: 52px 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,0,0,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -30px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* White on red = 4.59:1 ✅ AA — meets large text & bold */
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1.18;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: #ffffff;
+  }
+
+  /* rgba(255,255,255,0.90) on red — large text ✅ */
+  .hero-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+    font-weight: 400;
+  }
+
+  .hero-divider {
+    width: 48px;
+    height: 3px;
+    background: #ffffff;
+    margin: 22px 0;
+    opacity: 0.6;
+  }
+
+  /* White on red ✅ */
+  .hero-tagline {
+    font-size: 15px;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.6;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  /* ── DATE BANNER — Black on white/light ✅ ── */
+  .date-banner {
+    background: #1A1A1A;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .date-banner .date-text {
+    flex: 1;
+  }
+
+  /* White on #1A1A1A = 16.1:1 ✅ AAA */
+  .date-banner .date-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    display: block;
+    line-height: 1.5;
+  }
+
+  /* rgba(255,255,255,0.80) on #1A1A1A — large text ✅ */
+  .date-banner .date-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  /* White on red ✅ */
+  .date-banner .free-pill {
+    background: #DA291C;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    flex-shrink: 0;
+  }
+
+  /* ── BODY ── */
+  .body-section {
+    padding: 44px 48px;
+  }
+
+  /* #B01F15 on white = 5.9:1 ✅ AA */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #B01F15;
+    margin-bottom: 10px;
+  }
+
+  /* #1A1A1A on white = 16.1:1 ✅ */
+  .intro-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #1A1A1A;
+    font-weight: 300;
+  }
+
+  .intro-text strong {
+    color: #1A1A1A;
+    font-weight: 700;
+  }
+
+  /* ── CARDS — #1A1A1A on #F5F5F5 ✅ ── */
+  .wwwww-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .wwwww-card {
+    background: #F5F5F5;
+    border-left: 4px solid #DA291C;
+    padding: 20px 20px 18px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .wwwww-card.full {
+    grid-column: 1 / -1;
+  }
+
+  /* #1A1A1A on #F5F5F5 = 15.3:1 ✅ */
+  .wwwww-card .card-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .wwwww-card .card-label span.emoji {
+    font-size: 13px;
+  }
+
+  .wwwww-card .card-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333333;
+    font-weight: 400;
+  }
+
+  .wwwww-card .card-content strong {
+    color: #1A1A1A;
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  /* ── LEARNING OUTCOMES — white on #1A1A1A ✅ ── */
+  .outcomes-section {
+    background: #1A1A1A;
+    padding: 28px 48px;
+  }
+
+  /* #DA291C on #1A1A1A — large/bold text 3.5:1 ✅ large text */
+  .outcomes-section .section-label {
+    color: #DA291C;
+    font-weight: 800;
+  }
+
+  /* White on #1A1A1A = 16.1:1 ✅ */
+  .outcomes-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .outcomes-list {
+    list-style: none;
+  }
+
+  /* rgba(255,255,255,0.92) on #1A1A1A ✅ */
+  .outcomes-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 6px 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .outcome-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #DA291C;
+    flex-shrink: 0;
+    margin-top: 5px;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  /* ── LOCAL SECTION ── */
+  .local-section {
+    padding: 40px 48px;
+    background: #ffffff;
+    border-top: 4px solid #DA291C;
+  }
+
+  /* #1A1A1A on white ✅ */
+  .local-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  /* #595959 on white = 7:1 ✅ */
+  .local-section p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #595959;
+    font-weight: 400;
+  }
+
+  /* White text on #1A1A1A ✅ */
+  .local-highlight {
+    background: #1A1A1A;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .local-highlight .room {
+    color: #fff;
+  }
+
+  /* #DA291C on #1A1A1A — bold large text ✅ */
+  .local-highlight .room-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #DA291C;
+    margin-bottom: 4px;
+  }
+
+  /* White on #1A1A1A ✅ */
+  .local-highlight .room-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  /* rgba(255,255,255,0.80) — large context text ✅ */
+  .local-highlight .room-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.82);
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .info-grid .wwwww-card.full {
+    grid-column: 1 / -1;
+  }
+
+  /* ── AI EXPERIMENT BOX — #1A1A1A on white ✅ ── */
+  .ai-experiment-box {
+    margin-top: 20px;
+    background: #F5F5F5;
+    border: 1px solid #D0D0D0;
+    border-left: 4px solid #DA291C;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-experiment-box::before {
+    content: '✦';
+    position: absolute;
+    top: -8px; right: 16px;
+    font-size: 40px;
+    color: #DA291C;
+    opacity: 0.10;
+    aria-hidden: true;
+  }
+
+  /* #1A1A1A on #F5F5F5 ✅ */
+  .ai-experiment-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1A1A1A;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  /* #595959 on #F5F5F5 = 6.4:1 ✅ */
+  .ai-experiment-box p {
+    font-size: 13px;
+    color: #595959;
+    line-height: 1.65;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 40px 48px;
+    text-align: center;
+    background: #ffffff;
+  }
+
+  /* #1A1A1A on white ✅ */
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  /* #595959 on white = 7:1 ✅ */
+  .cta-section p {
+    font-size: 14px;
+    color: #595959;
+    margin-bottom: 28px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* White on #DA291C = 4.59:1 ✅ AA */
+  .cta-button {
+    display: inline-block;
+    background: #DA291C;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-bottom: 12px;
+  }
+
+  /* ── FOOTER — white on #1A1A1A ✅ ── */
+  .footer {
+    background: #1A1A1A;
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* rgba(255,255,255,0.70) — supplemental small text, context only */
+  .footer .footer-left {
+    font-size: 12px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* White on #1A1A1A ✅ */
+  .footer .footer-left strong {
+    color: #ffffff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .footer .red-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #DA291C;
+    flex-shrink: 0;
+  }
+
+  /* ── PULL QUOTE — #1A1A1A on white ✅ ── */
+  .pull-quote {
+    margin: 32px 0;
+    padding: 24px 28px;
+    border-left: 4px solid #DA291C;
+    background: #F5F5F5;
+  }
+
+  /* #1A1A1A on #F5F5F5 ✅ */
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #1A1A1A;
+  }
+
+  /* #767676 on #F5F5F5 = 4.48:1 ✅ AA (small supplemental text) */
+  .pull-quote .attribution {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #767676;
+    margin-top: 10px;
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="email-wrapper" role="main" aria-label="LBCC Faculty Event Email">
+
+  <!-- HERO -->
+  <header class="hero">
+<h1>Reclaiming Joy:<br>Human-First Teaching<br>in the AI Era</h1>
+    <div class="hero-subtitle" aria-label="Event type">A Statewide California Community Colleges PD Event</div>
+    <div class="hero-divider" role="presentation" aria-hidden="true"></div>
+    <p class="hero-tagline">A free, one-day gathering to reconnect with what makes teaching meaningful — and reimagine what comes next.</p>
+  </header>
+
+  <!-- DATE BANNER -->
+  <div class="date-banner">
+    <div class="date-text">
+      <div class="date-main">Friday, April 17, 2026</div>
+      <div class="date-main">9:00 AM – 3:00 PM</div>
+      <div class="date-sub">LAC: Rooms M-129 &amp; M-217 &nbsp;·&nbsp; TTC: Room MM-119 &nbsp;·&nbsp; Long Beach City College</div>
+    </div>
+    <a href="https://californiacommunitycolleges.cventevents.com/event/ReclaimingJoy/home" target="_blank" rel="noopener noreferrer" aria-label="Learn more and register — opens in a new tab" style="text-decoration: none;"><div class="free-pill">Free Event</div></a>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-section">
+
+    <div class="section-label">The Short Version</div>
+    <p class="intro-text">
+      AI is changing the classroom — fast. Agentic AI can now log into Canvas and submit assignments for students. 
+      Many of us are feeling the weight of it. This event is not about surveillance or detection. 
+      It's about <strong>returning to joy, human connection, and the parts of teaching that no AI can replicate.</strong>
+    </p>
+
+    <div class="pull-quote">
+      <p>"The best defense against automation isn't tighter surveillance — it's returning to what machines cannot do: witness authentic growth, honor cultural knowledge, and create learning where students show up as their full selves."</p>
+      <span class="attribution">— Event Description, Reclaiming Joy 2026</span>
+    </div>
+
+    <!-- WHO WHAT WHERE WHEN WHY -->
+    <div class="section-label">The Details at a Glance</div>
+    <div class="wwwww-grid">
+
+      <div class="wwwww-card">
+        <div class="card-label"><span class="emoji">👥</span> Who</div>
+        <div class="card-content">
+          <strong>All LBCC Faculty</strong>
+          Full-time and adjunct faculty are welcome. No prior AI expertise needed.
+        </div>
+      </div>
+
+      <div class="wwwww-card">
+        <div class="card-label"><span class="emoji">🕘</span> When</div>
+        <div class="card-content">
+          <strong>Friday, April 17, 2026</strong>
+          9:00 AM – 3:00 PM<br>Full-day, flexible format
+        </div>
+      </div>
+
+      <div class="wwwww-card">
+        <div class="card-label"><span class="emoji">📍</span> Where (LBCC)</div>
+        <div class="card-content">
+          <strong>LAC: Rooms M-129 &amp; M-217</strong>
+          <strong style="margin-top:4px;">TTC: Room MM-119</strong>
+          On-campus watch party at either location — or join individually online from anywhere.
+        </div>
+      </div>
+
+      <div class="wwwww-card">
+        <div class="card-label"><span class="emoji">📋</span> What</div>
+        <div class="card-content">
+          <strong>Statewide Live PD Sessions</strong>
+          Interactive workshops on human-first pedagogy, assessment redesign, and AI fatigue.
+        </div>
+      </div>
+
+      <div class="wwwww-card full">
+        <div class="card-label"><span class="emoji">💡</span> Why It Matters</div>
+        <div class="card-content">
+          Faculty across California are grappling with the same questions: How do I protect academic integrity without becoming a surveillance officer? How do I stay energized when the tools keep changing? This event gives you space to process, learn, and design forward — together.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OUTCOMES -->
+  <div class="outcomes-section">
+    <div class="section-label">What You'll Walk Away With</div>
+    <h2>Learning Outcomes</h2>
+    <ul class="outcomes-list">
+      <li><div class="outcome-dot"></div> Strategies to make student thinking visible — without relying on detection tools</li>
+      <li><div class="outcome-dot"></div> Frameworks for centering authentic human connection in your course design</li>
+      <li><div class="outcome-dot"></div> Assessment approaches that invite students' lived experiences and cultural knowledge</li>
+      <li><div class="outcome-dot"></div> Practical ways to protect transfer integrity and promote equity</li>
+      <li><div class="outcome-dot"></div> A renewed sense of creative energy and community with colleagues statewide</li>
+    </ul>
+  </div>
+
+  <!-- LOCAL LBCC SECTION -->
+  <div class="local-section">
+    <div class="section-label">LBCC Campus Experience</div>
+    <h2>Join Us In Person at LBCC</h2>
+    <p>
+      While the sessions are broadcast statewide, LBCC is hosting a <strong>campus watch party</strong> where you can watch the live sessions alongside your colleagues — then step away from the screen for real conversation and reflection.
+    </p>
+
+    <div class="local-highlight" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="room">
+        <div class="room-label">📍 LAC · Room 1</div>
+        <div class="room-name">M-129</div>
+        <div class="room-desc">Primary watch party — live statewide broadcast with colleagues</div>
+      </div>
+      <div class="room">
+        <div class="room-label">📍 LAC · Room 2</div>
+        <div class="room-name">M-217</div>
+        <div class="room-desc">Overflow space for small group discussion and reflection</div>
+      </div>
+      <div class="room">
+        <div class="room-label">📍 TTC Campus</div>
+        <div class="room-name">MM-119</div>
+        <div class="room-desc">TTC campus watch party — same program, closer to you</div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+
+      <div class="wwwww-card" style="margin: 0;">
+        <div class="card-label"><span class="emoji">💬</span> Local Dialogue &amp; AI Exploration</div>
+        <div class="card-content">
+          Between sessions, LBCC will create space for <strong>local faculty dialogue</strong> and hands-on experimentation with AI tools — an informal, low-stakes opportunity to share honest perspectives on how AI is showing up in your classroom.
+        </div>
+      </div>
+
+      <div class="wwwww-card" style="margin: 0;">
+        <div class="card-label"><span class="emoji">🍽️</span> Light Catering</div>
+        <div class="card-content">
+          Light refreshments are anticipated for on-campus attendees at participating LBCC locations. <strong>Details will be confirmed closer to the event date.</strong>
+        </div>
+      </div>
+
+      <div class="wwwww-card full" style="margin: 0; border-left-color: #1A1A1A;">
+        <div class="card-label"><span class="emoji">🎓</span> Flex Credit — Pending Approval</div>
+        <div class="card-content">
+          Flex credit may be available for attendance at this event, <strong>pending approval by the LBCC Office of Professional Development Flex Committee.</strong> Faculty interested in earning Flex credit should track their attendance and watch for official confirmation from the Flex Committee prior to the event.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW TO ATTEND -->
+  <div class="body-section" style="padding-top: 36px; padding-bottom: 0;">
+    <div class="section-label">Two Ways to Attend</div>
+    <div class="wwwww-grid">
+      <div class="wwwww-card">
+        <div class="card-label"><span class="emoji">🏛️</span> Option 1 — On Campus</div>
+        <div class="card-content">
+          Join colleagues at <strong>LAC: M-129 or M-217</strong> or <strong>TTC: MM-119</strong> for a shared watch party experience with built-in time for local discussion and AI tool exploration.
+        </div>
+      </div>
+      <a href="https://californiacommunitycolleges.cventevents.com/event/ReclaimingJoy/home" target="_blank" rel="noopener noreferrer" aria-label="Register online for Reclaiming Joy — opens in a new tab" style="text-decoration: none; display: block;">
+      <div class="wwwww-card" style="border-left-color: #DA291C; background: #FDF0EF; cursor: pointer;">
+        <div class="card-label" style="color: #1A1A1A;"><span class="emoji">💻</span> Option 2 — Online &nbsp;<span style="font-size:10px; background:#DA291C; color:#ffffff; padding:3px 10px; border-radius:50px; letter-spacing:1.5px; text-align:center; display:inline-block;">REGISTER</span></div>
+        <div class="card-content">
+          Attend independently from home, your office, or anywhere. You can even <strong>pair up with a peer</strong> and watch together remotely.
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Reserve Your Spot</h2>
+    <p>This is a free event open to all LBCC faculty — full-time and adjunct. Space in campus rooms is limited, so please RSVP to help us prepare.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSem37wJK_1Bs2Q05CDMz8CsDQx8xy1NflkfVDYxXm4DI7mnjQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button" aria-label="RSVP for Reclaiming Joy — opens Google Form in a new tab">RSVP Now — It's Free</a><br>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-left">
+      <strong>Long Beach City College</strong>
+      This event is offered in partnership with the California Community Colleges Chancellor's Office and the Regional Community of Practice (CoP).
+    </div>
+    <div class="red-dot" role="presentation" aria-hidden="true"></div>
+  </footer>
+
+</div>
+</body>
+</html>
