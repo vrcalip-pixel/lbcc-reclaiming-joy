@@ -437,12 +437,42 @@
     margin-bottom: 12px;
   }
 
+  /* ── VOLUNTARY NOTICE ── */
+  .voluntary-notice {
+    background: #F5F5F5;
+    border: 1px solid #D0D0D0;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .voluntary-notice .notice-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .voluntary-notice p {
+    font-size: 12px;
+    color: #595959;
+    line-height: 1.65;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
   /* ── FOOTER — white on #1A1A1A ✅ ── */
   .footer {
     background: #1A1A1A;
     padding: 28px 48px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
@@ -470,6 +500,16 @@
     border-radius: 50%;
     background: #DA291C;
     flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .footer .footer-disclaimer {
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.55;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 10px;
   }
 
   /* ── PULL QUOTE — #1A1A1A on white ✅ ── */
@@ -584,6 +624,15 @@
         </div>
       </div>
 
+      <!-- ✅ NEW: Voluntary Participation Card -->
+      <div class="wwwww-card full" style="border-left-color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-left: 4px solid #1A1A1A;">
+        <div class="card-label"><span class="emoji">📌</span> Voluntary Participation</div>
+        <div class="card-content">
+          <strong>This is a voluntary, non-compensated professional development opportunity.</strong>
+          Attendance is entirely optional and is not a condition of employment. This event does not constitute assigned work time, and no compensation, stipend, or hourly pay will be provided for participation. Faculty who choose to attend do so on their own time and at their own discretion.
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -642,10 +691,11 @@
         </div>
       </div>
 
+      <!-- ✅ UPDATED: Flex Credit card with stronger protective language -->
       <div class="wwwww-card full" style="margin: 0; border-left-color: #1A1A1A;">
         <div class="card-label"><span class="emoji">🎓</span> Flex Credit — Pending Approval</div>
         <div class="card-content">
-          Flex credit may be available for attendance at this event, <strong>pending approval by the LBCC Office of Professional Development Flex Committee.</strong> Faculty interested in earning Flex credit should track their attendance and watch for official confirmation from the Flex Committee prior to the event.
+          Flex credit <em>may</em> be available for attendance at this event, <strong>pending review and approval by the LBCC Office of Professional Development Flex Committee.</strong> Flex credit is not guaranteed. Faculty interested in earning Flex credit should track their attendance and retain documentation. Please watch for official communication from the Flex Committee regarding eligibility and approval status prior to the event. Participation in this event should not be understood as an entitlement to Flex credit or any other form of compensation.
         </div>
       </div>
 
@@ -679,6 +729,11 @@
     <p>This is a free event open to all LBCC faculty — full-time and adjunct. Space in campus rooms is limited, so please RSVP to help us prepare.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSem37wJK_1Bs2Q05CDMz8CsDQx8xy1NflkfVDYxXm4DI7mnjQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button" aria-label="RSVP for Reclaiming Joy — opens Google Form in a new tab">RSVP Now — It's Free</a><br>
 
+    <!-- ✅ NEW: Voluntary disclaimer below RSVP button -->
+    <div class="voluntary-notice">
+      <div class="notice-label"><span style="font-size: 13px;">ℹ️</span> Please Note</div>
+      <p>This event is a <strong>voluntary professional development opportunity</strong> and is not compensated. Attendance is not required and does not constitute assigned work time. No stipend, hourly pay, or other compensation will be provided. Faculty who choose to attend do so voluntarily, on their own time, and at their own discretion. RSVP does not create an obligation to attend or a right to compensation of any kind.</p>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -686,6 +741,10 @@
     <div class="footer-left">
       <strong>Long Beach City College</strong>
       This event is offered in partnership with the California Community Colleges Chancellor's Office and the Regional Community of Practice (CoP).
+      <!-- ✅ NEW: Footer disclaimer -->
+      <div class="footer-disclaimer">
+        Voluntary event — not compensated. Attendance does not constitute assigned work time and no compensation, stipend, or hourly pay is provided. Flex credit, if applicable, is subject to separate approval by the LBCC Office of Professional Development Flex Committee and is not guaranteed by participation.
+      </div>
     </div>
     <div class="red-dot" role="presentation" aria-hidden="true"></div>
   </footer>
