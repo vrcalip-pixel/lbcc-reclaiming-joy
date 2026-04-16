@@ -6,25 +6,6 @@
 <title>Reclaiming Joy: Human-First Teaching in the AI Era | LBCC Faculty PD</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  /*
-   * COLOR SYSTEM — LBCC Official Brand + WCAG 2.1 AA Compliant
-   * ----------------------------------------------------------
-   * --lbcc-red:      #DA291C  (PMS 485 — primary brand red)
-   * --lbcc-red-dark: #B01F15  (darkened for AA text on white — 5.9:1)
-   * --lbcc-black:    #1A1A1A  (Process Black)
-   * --lbcc-white:    #FFFFFF
-   * --lbcc-offwhite: #F5F5F5  (neutral surface)
-   * --lbcc-gray:     #595959  (body text on white — 7:1)
-   * --lbcc-lgray:    #767676  (min AA on white — 4.54:1)
-   *
-   * Contrast checks (WCAG 2.1 AA requires ≥4.5:1 normal, ≥3:1 large/bold):
-   * White on #DA291C  → 4.59:1 ✅ AA
-   * White on #1A1A1A  → 16.1:1 ✅ AAA
-   * #1A1A1A on white  → 16.1:1 ✅ AAA
-   * #595959 on white  → 7.0:1  ✅ AAA
-   * White on #B01F15  → 5.9:1  ✅ AA
-   */
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
@@ -39,7 +20,6 @@
     background: #fff;
   }
 
-  /* ── HERO — Muted deep crimson ── */
   .hero {
     background: linear-gradient(155deg, #8B1A13 0%, #7A1610 55%, #5E1009 100%);
     padding: 52px 48px 44px;
@@ -67,7 +47,6 @@
     pointer-events: none;
   }
 
-  /* White on red = 4.59:1 ✅ AA — meets large text & bold */
   .hero h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 700;
@@ -82,7 +61,6 @@
     color: #ffffff;
   }
 
-  /* rgba(255,255,255,0.90) on red — large text ✅ */
   .hero-subtitle {
     font-size: 14px;
     color: rgba(255,255,255,0.92);
@@ -99,7 +77,6 @@
     opacity: 0.6;
   }
 
-  /* White on red ✅ */
   .hero-tagline {
     font-size: 15px;
     color: rgba(255,255,255,0.92);
@@ -108,7 +85,6 @@
     font-weight: 300;
   }
 
-  /* ── DATE BANNER — Black on white/light ✅ ── */
   .date-banner {
     background: #1A1A1A;
     padding: 20px 48px;
@@ -122,7 +98,6 @@
     flex: 1;
   }
 
-  /* White on #1A1A1A = 16.1:1 ✅ AAA */
   .date-banner .date-main {
     font-family: 'Playfair Display', serif;
     font-size: 17px;
@@ -133,7 +108,6 @@
     line-height: 1.5;
   }
 
-  /* rgba(255,255,255,0.80) on #1A1A1A — large text ✅ */
   .date-banner .date-sub {
     font-size: 13px;
     color: rgba(255,255,255,0.82);
@@ -141,7 +115,6 @@
     margin-top: 2px;
   }
 
-  /* White on red ✅ */
   .date-banner .free-pill {
     background: #DA291C;
     color: #ffffff;
@@ -154,12 +127,10 @@
     flex-shrink: 0;
   }
 
-  /* ── BODY ── */
   .body-section {
     padding: 44px 48px;
   }
 
-  /* #B01F15 on white = 5.9:1 ✅ AA */
   .section-label {
     font-size: 10px;
     font-weight: 700;
@@ -169,7 +140,6 @@
     margin-bottom: 10px;
   }
 
-  /* #1A1A1A on white = 16.1:1 ✅ */
   .intro-text {
     font-size: 16px;
     line-height: 1.75;
@@ -182,7 +152,6 @@
     font-weight: 700;
   }
 
-  /* ── CARDS — #1A1A1A on #F5F5F5 ✅ ── */
   .wwwww-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -201,7 +170,6 @@
     grid-column: 1 / -1;
   }
 
-  /* #1A1A1A on #F5F5F5 = 15.3:1 ✅ */
   .wwwww-card .card-label {
     font-size: 9px;
     font-weight: 700;
@@ -233,19 +201,16 @@
     margin-bottom: 2px;
   }
 
-  /* ── LEARNING OUTCOMES — white on #1A1A1A ✅ ── */
   .outcomes-section {
     background: #1A1A1A;
     padding: 28px 48px;
   }
 
-  /* #DA291C on #1A1A1A — large/bold text 3.5:1 ✅ large text */
   .outcomes-section .section-label {
     color: #DA291C;
     font-weight: 800;
   }
 
-  /* White on #1A1A1A = 16.1:1 ✅ */
   .outcomes-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
@@ -259,7 +224,6 @@
     list-style: none;
   }
 
-  /* rgba(255,255,255,0.92) on #1A1A1A ✅ */
   .outcomes-list li {
     display: flex;
     align-items: flex-start;
@@ -281,14 +245,12 @@
     border: 2px solid rgba(255,255,255,0.4);
   }
 
-  /* ── LOCAL SECTION ── */
   .local-section {
     padding: 40px 48px;
     background: #ffffff;
     border-top: 4px solid #DA291C;
   }
 
-  /* #1A1A1A on white ✅ */
   .local-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
@@ -297,7 +259,6 @@
     font-weight: 700;
   }
 
-  /* #595959 on white = 7:1 ✅ */
   .local-section p {
     font-size: 14px;
     line-height: 1.7;
@@ -305,7 +266,6 @@
     font-weight: 400;
   }
 
-  /* White text on #1A1A1A ✅ */
   .local-highlight {
     background: #1A1A1A;
     border-radius: 8px;
@@ -320,7 +280,6 @@
     color: #fff;
   }
 
-  /* #DA291C on #1A1A1A — bold large text ✅ */
   .local-highlight .room-label {
     font-size: 9px;
     font-weight: 800;
@@ -330,7 +289,6 @@
     margin-bottom: 4px;
   }
 
-  /* White on #1A1A1A ✅ */
   .local-highlight .room-name {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
@@ -338,7 +296,6 @@
     color: #ffffff;
   }
 
-  /* rgba(255,255,255,0.80) — large context text ✅ */
   .local-highlight .room-desc {
     font-size: 12px;
     color: rgba(255,255,255,0.82);
@@ -358,53 +315,12 @@
     grid-column: 1 / -1;
   }
 
-  /* ── AI EXPERIMENT BOX — #1A1A1A on white ✅ ── */
-  .ai-experiment-box {
-    margin-top: 20px;
-    background: #F5F5F5;
-    border: 1px solid #D0D0D0;
-    border-left: 4px solid #DA291C;
-    border-radius: 0 8px 8px 0;
-    padding: 20px 22px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ai-experiment-box::before {
-    content: '✦';
-    position: absolute;
-    top: -8px; right: 16px;
-    font-size: 40px;
-    color: #DA291C;
-    opacity: 0.10;
-    aria-hidden: true;
-  }
-
-  /* #1A1A1A on #F5F5F5 ✅ */
-  .ai-experiment-box h3 {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1A1A1A;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-  }
-
-  /* #595959 on #F5F5F5 = 6.4:1 ✅ */
-  .ai-experiment-box p {
-    font-size: 13px;
-    color: #595959;
-    line-height: 1.65;
-  }
-
-  /* ── CTA ── */
   .cta-section {
     padding: 40px 48px;
     text-align: center;
     background: #ffffff;
   }
 
-  /* #1A1A1A on white ✅ */
   .cta-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
@@ -413,7 +329,6 @@
     font-weight: 700;
   }
 
-  /* #595959 on white = 7:1 ✅ */
   .cta-section p {
     font-size: 14px;
     color: #595959;
@@ -422,7 +337,6 @@
     line-height: 1.6;
   }
 
-  /* White on #DA291C = 4.59:1 ✅ AA */
   .cta-button {
     display: inline-block;
     background: #DA291C;
@@ -437,12 +351,11 @@
     margin-bottom: 12px;
   }
 
-  /* ── VOLUNTARY NOTICE ── */
   .voluntary-notice {
     background: #F5F5F5;
     border: 1px solid #D0D0D0;
     border-radius: 6px;
-    padding: 16px 20px;
+    padding: 14px 20px;
     margin-top: 20px;
     text-align: left;
   }
@@ -467,7 +380,6 @@
     text-align: left;
   }
 
-  /* ── FOOTER — white on #1A1A1A ✅ ── */
   .footer {
     background: #1A1A1A;
     padding: 28px 48px;
@@ -478,7 +390,6 @@
     flex-wrap: wrap;
   }
 
-  /* rgba(255,255,255,0.70) — supplemental small text, context only */
   .footer .footer-left {
     font-size: 12px;
     color: rgba(255,255,255,0.72);
@@ -486,7 +397,6 @@
     line-height: 1.6;
   }
 
-  /* White on #1A1A1A ✅ */
   .footer .footer-left strong {
     color: #ffffff;
     font-weight: 700;
@@ -503,16 +413,6 @@
     margin-top: 2px;
   }
 
-  .footer .footer-disclaimer {
-    font-size: 10px;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.55;
-    margin-top: 10px;
-    border-top: 1px solid rgba(255,255,255,0.12);
-    padding-top: 10px;
-  }
-
-  /* ── PULL QUOTE — #1A1A1A on white ✅ ── */
   .pull-quote {
     margin: 32px 0;
     padding: 24px 28px;
@@ -520,7 +420,6 @@
     background: #F5F5F5;
   }
 
-  /* #1A1A1A on #F5F5F5 ✅ */
   .pull-quote p {
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -529,7 +428,6 @@
     color: #1A1A1A;
   }
 
-  /* #767676 on #F5F5F5 = 4.48:1 ✅ AA (small supplemental text) */
   .pull-quote .attribution {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
@@ -549,7 +447,7 @@
 
   <!-- HERO -->
   <header class="hero">
-<h1>Reclaiming Joy:<br>Human-First Teaching<br>in the AI Era</h1>
+    <h1>Reclaiming Joy:<br>Human-First Teaching<br>in the AI Era</h1>
     <div class="hero-subtitle" aria-label="Event type">A Statewide California Community Colleges PD Event</div>
     <div class="hero-divider" role="presentation" aria-hidden="true"></div>
     <p class="hero-tagline">A free, one-day gathering to reconnect with what makes teaching meaningful — and reimagine what comes next.</p>
@@ -570,8 +468,8 @@
 
     <div class="section-label">The Short Version</div>
     <p class="intro-text">
-      AI is changing the classroom — fast. Agentic AI can now log into Canvas and submit assignments for students. 
-      Many of us are feeling the weight of it. This event is not about surveillance or detection. 
+      AI is changing the classroom — fast. Agentic AI can now log into Canvas and submit assignments for students.
+      Many of us are feeling the weight of it. This event is not about surveillance or detection.
       It's about <strong>returning to joy, human connection, and the parts of teaching that no AI can replicate.</strong>
     </p>
 
@@ -621,15 +519,6 @@
         <div class="card-label"><span class="emoji">💡</span> Why It Matters</div>
         <div class="card-content">
           Faculty across California are grappling with the same questions: How do I protect academic integrity without becoming a surveillance officer? How do I stay energized when the tools keep changing? This event gives you space to process, learn, and design forward — together.
-        </div>
-      </div>
-
-      <!-- ✅ NEW: Voluntary Participation Card -->
-      <div class="wwwww-card full" style="border-left-color: #1A1A1A; background: #FFFFFF; border: 1px solid #D0D0D0; border-left: 4px solid #1A1A1A;">
-        <div class="card-label"><span class="emoji">📌</span> Voluntary Participation</div>
-        <div class="card-content">
-          <strong>This is a voluntary, non-compensated professional development opportunity.</strong>
-          Attendance is not a condition of employment and does not constitute assigned work time. Part-time faculty will not receive hourly pay, a stipend, or any other compensation for attending. All faculty who choose to participate do so on their own time and at their own discretion.
         </div>
       </div>
 
@@ -691,7 +580,6 @@
         </div>
       </div>
 
-      <!-- ✅ UPDATED: Flex Credit card with stronger protective language -->
       <div class="wwwww-card full" style="margin: 0; border-left-color: #1A1A1A;">
         <div class="card-label"><span class="emoji">🎓</span> Flex Credit — Pending Approval</div>
         <div class="card-content">
@@ -727,12 +615,12 @@
   <div class="cta-section">
     <h2>Reserve Your Spot</h2>
     <p>This is a free event open to all LBCC faculty — full-time and adjunct. Space in campus rooms is limited, so please RSVP to help us prepare.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSem37wJK_1Bs2Q05CDMz8CsDQx8xy1NflkfVDYxXm4DI7mnjQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button" aria-label="RSVP for Reclaiming Joy — opens Google Form in a new tab">RSVP Now — It's Free</a><br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSem37wJK_1Bs2Q05CDMz8CsDQx8xy1NflkfVDYxXm4DI7mnjQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="cta-button" aria-label="RSVP for Reclaiming Joy — opens Google Form in a new tab">RSVP Now — It's Free</a>
 
-    <!-- ✅ NEW: Voluntary disclaimer below RSVP button -->
+    <!-- UPDATED: Single agreed-upon line only -->
     <div class="voluntary-notice">
-      <div class="notice-label"><span style="font-size: 13px;">ℹ️</span> Please Note</div>
-      <p>This is a <strong>voluntary event</strong> — attendance is optional and does not constitute compensated work time. Part-time faculty will not receive pay or a stipend for participating. RSVP does not create an obligation to attend or a right to compensation.</p>
+      <div class="notice-label"><span style="font-size: 13px;">📌</span> Please Note</div>
+      <p>This is not a compensated ancillary activity for part-time faculty.</p>
     </div>
   </div>
 
@@ -741,10 +629,6 @@
     <div class="footer-left">
       <strong>Long Beach City College</strong>
       This event is offered in partnership with the California Community Colleges Chancellor's Office and the Regional Community of Practice (CoP).
-      <!-- ✅ NEW: Footer disclaimer -->
-      <div class="footer-disclaimer">
-        Voluntary, non-compensated event. Part-time faculty are not eligible for hourly pay or stipends for attendance. Flex credit is subject to separate Flex Committee approval and is not guaranteed.
-      </div>
     </div>
     <div class="red-dot" role="presentation" aria-hidden="true"></div>
   </footer>
